@@ -24,7 +24,7 @@ constructor(private dialog: MatDialog){
 showDialogue() {
   this.dialog.open(DialogueComponent,{
   width: '500px',
-  height: '300px',
+  height: '330px',
 
     });
 }
