@@ -17,6 +17,7 @@ export interface Member {
    {name: "Spear Thrower", image: "https://static.wikia.nocookie.net/vsbattles/images/9/93/1637610530660.png", cost: 120, faction: faction.tribal, eloRating: 1000},
    {name: "Stoner", image: "https://static.wikia.nocookie.net/vsbattles/images/b/b5/StonerRed.png", cost: 160, faction: faction.tribal, eloRating: 1000},
    {name: "Bone Mage", image: "https://i.ytimg.com/vi/nY8oEzjFoBI/maxresdefault.jpg", cost: 300, faction: faction.tribal, eloRating: 1000},
+   {name: "Chieftain", image: "https://static.wikia.nocookie.net/vsbattles/images/0/06/Red_Chieftain.png", cost: 400, faction: faction.tribal, eloRating: 1000},
   ]
 
   export function setTabs(value: totally[]): void{

@@ -13,7 +13,7 @@ import { FighterComponent } from '../fighter/fighter.component';
 export class DialogueComponent {
   ObjektEins= this.tabs[this.zahlen.random(0, db.tabs.length - 1)];
   ObjektZwei= this.tabs[this.zahlen.random(0, db.tabs.length - 1)];
-  constructor(private zahlen: ZahlenService){
+  constructor(public zahlen: ZahlenService){
 
   }
   get tabs() {
