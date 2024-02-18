@@ -9,7 +9,8 @@ export interface Member {
     faction: faction;
   }
   enum faction {
-    tribal
+    tribal,
+    Farmer,
   }
   export let tabs: totally[] = [
    {name: "Clubber", image: "https://static.wikia.nocookie.net/vsbattles/images/5/50/Red_Clubber.png", cost: 70, faction: faction.tribal, eloRating: 1000},
@@ -18,6 +19,8 @@ export interface Member {
    {name: "Stoner", image: "https://static.wikia.nocookie.net/vsbattles/images/b/b5/StonerRed.png", cost: 160, faction: faction.tribal, eloRating: 1000},
    {name: "Bone Mage", image: "https://i.ytimg.com/vi/nY8oEzjFoBI/maxresdefault.jpg", cost: 300, faction: faction.tribal, eloRating: 1000},
    {name: "Chieftain", image: "https://static.wikia.nocookie.net/vsbattles/images/0/06/Red_Chieftain.png", cost: 400, faction: faction.tribal, eloRating: 1000},
+   {name: "Mammoth", image: "https://static.wikia.nocookie.net/vsbattles/images/c/c0/MammothRed.png", cost: 2200, faction: faction.tribal, eloRating: 1000},
+   {name: "Halfling", image: "https://th.bing.com/th/id/OIP.ktzZGKP1G1knlzis7D8ykgHaHa?rs=1&pid=ImgDetMain", cost: 50, faction: faction.Farmer, eloRating: 1000},
   ]
 
   export function setTabs(value: totally[]): void{

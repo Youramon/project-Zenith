@@ -3,10 +3,11 @@ import { Component } from '@angular/core';
 import * as db from '../../meine-Dateien/db';
 import { ZahlenService } from '../../zahlen.service';
 import { FighterComponent } from '../fighter/fighter.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 @Component({
   selector: 'app-dialogue',
   standalone: true,
-  imports: [FighterComponent],
+  imports: [FighterComponent, MatButtonToggleModule],
   templateUrl: './dialogue.component.html',
   styleUrl: './dialogue.component.less'
 })
