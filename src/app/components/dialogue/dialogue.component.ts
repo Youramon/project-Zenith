@@ -5,6 +5,7 @@ import { ZahlenService } from '../../zahlen.service';
 import { FighterComponent } from '../fighter/fighter.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-dialogue',
   standalone: true,
@@ -13,8 +14,9 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
   styleUrl: './dialogue.component.less'
 })
 export class DialogueComponent {
-  ObjektEins= this.tabs[this.zahlen.random(0, db.tabs.length - 1)];
-  ObjektZwei= this.tabs[this.zahlen.random(0, db.tabs.length - 1)];
+  ObjektEins = this.tabs[this.zahlen.random(0, db.tabs.length - 1)];
+  ObjektZwei = this.tabs[this.zahlen.random(0, db.tabs.length - 1)];
+ 
   result?: number;
   change: number = 0;
  
@@ -23,13 +25,20 @@ handleFight(){
   this.change = handleKampf(this.ObjektEins.eloRating, this.ObjektZwei.eloRating, this.result); 
   this.ObjektEins.eloRating += this.change;
   this.ObjektZwei.eloRating -= this.change;
+  this.ObjektEins.record[2- 2*this.result]++;
+  this.ObjektZwei.record[2*this.result]++;
   db.tabs.sort((a, b) => b.eloRating - a.eloRating);
+  localStorage.setItem("tabs", JSON.stringify(db.tabs));
+  this.dialogRef.close();
  }
 }
 
 
-  constructor(public zahlen: ZahlenService){
-
+  constructor(public zahlen: ZahlenService,public dialogRef: MatDialogRef<DialogueComponent>){
+    while(this.ObjektZwei === this.ObjektEins)
+    {
+      this.ObjektZwei= this.tabs[this.zahlen.random(0, db.tabs.length - 1)];
+    }
   }
   get tabs() {
     return db.tabs;
