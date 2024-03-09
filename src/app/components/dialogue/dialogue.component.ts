@@ -1,22 +1,30 @@
 import { Component } from '@angular/core';
-
+import { handleKampf } from '../../meine-Dateien/handleKampf';
 import * as db from '../../meine-Dateien/db';
 import { ZahlenService } from '../../zahlen.service';
 import { FighterComponent } from '../fighter/fighter.component';
-import {MatButtonToggleChange, MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-dialogue',
   standalone: true,
-  imports: [FighterComponent, MatButtonToggleModule],
+  imports: [FighterComponent, MatButtonToggleModule,FormsModule, ReactiveFormsModule],
   templateUrl: './dialogue.component.html',
   styleUrl: './dialogue.component.less'
 })
 export class DialogueComponent {
   ObjektEins= this.tabs[this.zahlen.random(0, db.tabs.length - 1)];
   ObjektZwei= this.tabs[this.zahlen.random(0, db.tabs.length - 1)];
+  result?: number;
+  change: number = 0;
  
 handleFight(){
-  
+ if (this.result != undefined){
+  this.change = handleKampf(this.ObjektEins.eloRating, this.ObjektZwei.eloRating, this.result); 
+  this.ObjektEins.eloRating += this.change;
+  this.ObjektZwei.eloRating -= this.change;
+  db.tabs.sort((a, b) => b.eloRating - a.eloRating);
+ }
 }
 
 
