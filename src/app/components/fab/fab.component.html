@@ -1,1 +1,16 @@
-<button (click) = "openDialogue()">+</button>
+<div id="container-floating">
+    <div class="nd4 nds"><img class="reminder">
+      <p class="letter">C</p>
+    </div>
+    
+    <div class="nd3 nds"><mat-icon (click) =  "openBottomSheet()" class ="icon">add</mat-icon></div>
+    
+    <div class="nd1 nds">
+        <mat-icon class = "icon">edit</mat-icon>
+    </div>
+  
+    <div (click) = "openDialogue()" id="floating-button">
+      <p class="plus">+</p>
+      <mat-icon class = "edit">play_arrow</mat-icon>
+    </div>
+  </div>
