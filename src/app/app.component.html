@@ -3,7 +3,7 @@
       <p>Congratulations! Your app is running. 🎉</p>
    @for (item of tabs; track item.name)
    {
-<app-ein-item class ="ein-item" [name]="tabs.indexOf(item)+1 + '. ' +item.name + ' (' + item.eloRating + ')'" [bild]="item.image"></app-ein-item>
+<app-ein-item class ="ein-item" [name]="tabs.indexOf(item)+1 + '. ' +item.name + ' (' + item.eloRating + ')' " [bild]="'https://' +item.image" [record] = "item.record"></app-ein-item>
    }
   </div>
   <app-fab (dialogue)="showDialogue()" class = "fab"></app-fab>

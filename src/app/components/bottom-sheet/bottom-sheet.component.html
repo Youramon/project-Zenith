@@ -1,1 +1,31 @@
-<p>bottom-sheet works!</p>
+<h1>Unit hinzufügen</h1>
+<div>
+  <mat-form-field appearance = "outline">
+    <mat-label>Faction</mat-label>
+    <mat-select [(value)]="faction">
+        <mat-option value="6">Renaissance</mat-option>
+        <mat-option value="7">Pirate</mat-option>
+        <mat-option value ="8">Spooky</mat-option>
+        <mat-option value ="9">Wild West</mat-option>
+        <mat-option value = "10">Legacy</mat-option>
+        <mat-option value = "11">Fantasy Good</mat-option>
+        <mat-option value = "12">Fantasy Evil</mat-option>
+        <mat-option value = "13">Secret</mat-option>
+      </mat-select>
+</mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Input name..." [(ngModel)]="name">
+  </mat-form-field>
+  
+  <mat-form-field appearance="outline">
+  <mat-label>Link (ohne https://)</mat-label>
+    <input matInput placeholder="Link Copy paste" [(ngModel)]="link">
+</mat-form-field>
+  
+    <mat-form-field appearance="outline">
+  <mat-label>Kosten</mat-label>
+    <input matInput type = "number" placeholder="Kosten..." [(ngModel)]="kosten">
+</mat-form-field>
+<button mat-raised-button (click) = handleClick()>Unit hinzufügen</button>
+</div>

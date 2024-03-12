@@ -16,7 +16,7 @@ import { DialogueComponent } from './components/dialogue/dialogue.component';
 export class AppComponent {
   title = 'project-zenith';
 ngOnInit() {
-  // db.setTabs(JSON.parse(localStorage.getItem("tabs") || "[]"));
+db.setTabs(JSON.parse(localStorage.getItem("tabs") || "[]"));
 }
 constructor(private dialog: MatDialog){
 }

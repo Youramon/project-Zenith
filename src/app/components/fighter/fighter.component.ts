@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import  *as db from '../../meine-Dateien/db';
 
 @Component({
   selector: 'app-fighter',
@@ -9,4 +10,5 @@ import { Component, Input } from '@angular/core';
 })
 export class FighterComponent {
 @Input() objekt!: any;
+a = db.faction;
 }

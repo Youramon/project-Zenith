@@ -1,5 +1,8 @@
-<div class="overall">
- <div id = "fürBild">
+<div class="overall" (mouseenter)="showText = true" (mouseleave)="showText = false">
+ <div id = "fürBild" >
     <img [src] = "this.bild"> 
 </div>
-<div class = "test">{{name}}</div></div>
+<div class = "test">{{name}} @if(showText){
+<span id = "W">{{record[0]}} </span><span id = "L"> {{record[2]}} </span><span id = "D"> {{record[1]}} </span>
+}
+</div></div>

@@ -10,6 +10,8 @@ import { Component, Input } from '@angular/core';
 export class EinItemComponent {
 @Input() name: string;
 @Input() bild: string;
+@Input() record!: number[];
+showText: boolean = false;
 constructor(){
   this.name = '';
   this.bild = '';
