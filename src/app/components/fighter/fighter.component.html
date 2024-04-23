@@ -1,6 +1,17 @@
 <div class = "fighter">
+  <div class ="Suche" [autofocus]="false">
+     <sub>{{this.objekt.name}} ({{a[this.objekt.faction]}})</sub>
+     <form [autofocus]="false">  
+     <input [placeholder]="this.objekt.name + '...'" class = "input" type="text" [formControl]="control" [matAutocomplete]="automatic" (focus)="grrr()" autofocus = "false" [autofocus]="false">
+     <mat-autocomplete #automatic="matAutocomplete" (optionSelected)="roflkopter($event)" [panelWidth]="'140px'" [autofocus]="false">
+        @for (name of gefilterteKaempfer | async; track name) {
+          <mat-option  [value]="name">{{name}}</mat-option>
+        }
+    </mat-autocomplete>
+    </form> 
+  </div>
+    
     <img [src] = "'https://' + this.objekt.image">
-    <sub>{{this.objekt.name}} ({{a[this.objekt.faction]}})</sub>
     <h3><span id = "W">{{this.objekt.record[0]}} </span><span id = "L"> {{this.objekt.record[2]}} </span><span id = "D"> {{this.objekt.record[1]}} </span></h3>
     <em>{{this.objekt.eloRating}}</em>
 </div>

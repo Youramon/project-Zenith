@@ -29,6 +29,7 @@ handleFight(){
   this.ObjektZwei.record[2*this.result]++;
   db.tabs.sort((a, b) => b.eloRating - a.eloRating);
   localStorage.setItem("tabs", JSON.stringify(db.tabs));
+  db.setNames();
   this.dialogRef.close();
  }
 }
