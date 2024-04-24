@@ -73,3 +73,7 @@ export interface Member {
   export function setTabs(value: totally[]): void{
     tabs = value;
   }
+  export let names: string[];
+  export function setNames(){
+    names = tabs.map(member => member.name);
+  }

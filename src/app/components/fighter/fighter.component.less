@@ -1,5 +1,5 @@
 .fighter{
-    padding-top: 50px;
+    padding-top: 30px;
     margin-left: 10px;
     margin-bottom: 0;
     width: 100px;
@@ -30,4 +30,52 @@ span{
 }
 #D{
     color: blue;
+}
+.Suche sub{
+    opacity: 1;
+    transition: 0.7s ;
+    bottom: 0px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: absolute;
+}
+.Suche .input{
+opacity: 0;
+transition: 0.7s ;
+}
+
+.Suche:hover sub{
+    opacity: 0;
+    transition: 0.7s ;
+
+}
+.Suche:hover .input{
+    transition: 0.7s ;
+    opacity: 1;
+}
+.input{
+width: 95%;
+height: 40px;
+margin-top: 0px;
+top: 0;
+left: 0;    
+z-index: 1; 
+opacity: 0;
+position: absolute;
+ margin-bottom: 30px;
+ background-color: darkgrey;
+ border: 1px solid #ccc;
+ outline-width: 0;
+ padding: 5px;
+ font-family: montserrat;
+    color: #2C3E50;
+    font-size: 13px;
+&::placeholder{
+    color: white;
+}
+}
+.Suche{
+width: 100%;
+position: relative;
+height: 49px;
 }

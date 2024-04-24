@@ -17,6 +17,7 @@ export class AppComponent {
   title = 'project-zenith';
 ngOnInit() {
 db.setTabs(JSON.parse(localStorage.getItem("tabs") || "[]"));
+db.setNames();
 }
 constructor(private dialog: MatDialog){
 }
