@@ -14,6 +14,7 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrl: './dialogue.component.less'
 })
 export class DialogueComponent {
+[x: string]: any;
   ObjektEins = this.tabs[this.zahlen.random(0, db.tabs.length - 1)];
   ObjektZwei = this.tabs[this.zahlen.random(0, db.tabs.length - 1)];
  
@@ -28,13 +29,17 @@ handleFight(){
   this.ObjektEins.record[2- 2*this.result]++;
   this.ObjektZwei.record[2*this.result]++;
   db.tabs.sort((a, b) => b.eloRating - a.eloRating);
-  localStorage.setItem("tabs", JSON.stringify(db.tabs));
   db.setNames();
+  localStorage.setItem("tabs", JSON.stringify(db.tabs));
   this.dialogRef.close();
  }
 }
-
-
+handleRaflkapter1(value: any){
+  this.ObjektEins = value;
+}
+handleRaflkapter2(value: any){
+  this.ObjektZwei = value;
+}
   constructor(public zahlen: ZahlenService,public dialogRef: MatDialogRef<DialogueComponent>){
     while(this.ObjektZwei === this.ObjektEins)
     {

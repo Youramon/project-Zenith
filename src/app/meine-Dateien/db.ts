@@ -23,7 +23,8 @@ export interface Member {
     Legacy,
     FantasyGood,
     FantasyEvil,
-    Secret
+    Secret,
+    Matchroom
   }
   export let tabs: totally[] = [
    {name: "Clubber", image: "static.wikia.nocookie.net/vsbattles/images/5/50/Red_Clubber.png", cost: 70, faction: faction.tribal, eloRating: 1000, record: [0,0,0]},

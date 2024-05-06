@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import  *as db from '../../meine-Dateien/db';
 import { CommonModule } from '@angular/common';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -17,6 +17,7 @@ import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
   styleUrl: './fighter.component.less'
 })
 export class FighterComponent {
+  @Output() raflkapter = new EventEmitter();
   control = new FormControl("");
   names: string[] = db.names;
   gefilterteKaempfer!: Observable<string[]>;
@@ -33,7 +34,7 @@ ngOnInit() {
   }
   private _filter(value: string): string[] {
     const filterValue = this._normalizeValue(value);
-    return this.names.filter(street => this._normalizeValue(street).includes(filterValue));
+    return this.names.filter(meow => this._normalizeValue(meow).includes(filterValue));
   }
   private _normalizeValue(value: string): string {
     return value.toLowerCase().replace(/\s/g, '');
@@ -42,8 +43,9 @@ ngOnInit() {
   roflkopter(event: MatAutocompleteSelectedEvent){
     const wert = event.option.value;
     this.objekt = db.tabs.find(x => x.name === wert);
+    this.raflkapter.emit(this.objekt);
   }
-  grrr(): void{
+  public grrr(): void{
     console.log("grrr");
   }
 }

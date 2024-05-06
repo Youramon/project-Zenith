@@ -5,7 +5,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
-import { tabs } from '../../meine-Dateien/db';
+import { tabs,setNames } from '../../meine-Dateien/db';
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 
 
@@ -30,6 +30,7 @@ handleClick(){
   }
   else{
     tabs.push({name: this.name, image: this.link, cost: this.kosten, faction: this.faction, eloRating: 1000, record: [0,0,0]});
+    setNames();
     this.bottomSheetRef.dismiss();
   }
 }
