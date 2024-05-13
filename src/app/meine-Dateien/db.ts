@@ -26,6 +26,13 @@ export interface Member {
     Secret,
     Matchroom
   }
+  export const seiten = new Map([
+    ["TABS", {link: "tabs", icon: "www.svgrepo.com/show/513724/axe-tool-construction.svg"}],
+    ["SSBU Char Elo", {link: "ssbu-char-elo", icon: "static.wikia.nocookie.net/logopedia/images/1/1b/SmashBall.svg"}],
+    ["SSBU Pros", {link: "ssbu-e-sport", icon: "www.svgrepo.com/show/512308/game-controller-round-795.svg"}],
+    ["Boxing", {link: "boxing", icon: "www.svgrepo.com/show/345522/boxing.svg"}],
+  ]);
+  
   export let tabs: totally[] = [
    {name: "Clubber", image: "static.wikia.nocookie.net/vsbattles/images/5/50/Red_Clubber.png", cost: 70, faction: faction.tribal, eloRating: 1000, record: [0,0,0]},
    {name: "Protector", image: "static.wikia.nocookie.net/vsbattles/images/1/1c/ProtectorRed.png", cost: 80, faction: faction.tribal, eloRating: 1000, record: [0,0,0]},
