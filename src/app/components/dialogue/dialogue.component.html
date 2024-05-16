@@ -3,7 +3,12 @@
  <app-fighter [objekt] = "this.ObjektEins" class = "fighter" [autofocus]="false" (raflkapter)="handleRaflkapter1($event)"></app-fighter>   
 <div class = "versusContainer">
     <img src = "https://comicvine.gamespot.com/a/uploads/original/11125/111254398/6645677-0729530474-versu.png" id = "versusGraphic" (click) = "handleFight()">
-<h1>{{zahlen.kgvRechner(this.ObjektEins.cost, this.ObjektZwei.cost)}}</h1>
+@if(this.ObjektEins.cost){
+    <h1>{{zahlen.kgvRechner(this.ObjektEins.cost, this.ObjektZwei.cost)}}</h1>
+}
+@else{
+  <h4>Ergebnis eintragen:</h4>
+}
 <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]= "result" aria-label="result" [hideSingleSelectionIndicator]="true">
     <mat-button-toggle value="1" aria-label="Win"  class = "win">
       <h1>Win</h1>

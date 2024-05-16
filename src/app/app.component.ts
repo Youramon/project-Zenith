@@ -20,7 +20,7 @@ ngOnInit() {
 db.setTabs(JSON.parse(localStorage.getItem("tabs") || "[]"));
 db.setNames();
 }
-constructor(private dialog: MatDialog){
+constructor(private dialog: MatDialog) {
 }
 
 showDialogue() {

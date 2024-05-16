@@ -6,6 +6,7 @@ import { FighterComponent } from '../fighter/fighter.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { currentPage } from '../../meine-Dateien/constants';
 @Component({
   selector: 'app-dialogue',
   standalone: true,
@@ -30,7 +31,7 @@ handleFight(){
   this.ObjektZwei.record[2*this.result]++;
   db.tabs.sort((a, b) => b.eloRating - a.eloRating);
   db.setNames();
-  localStorage.setItem("tabs", JSON.stringify(db.tabs));
+  localStorage.setItem(currentPage, JSON.stringify(db.tabs));
   this.dialogRef.close();
  }
 }

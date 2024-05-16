@@ -1,6 +1,6 @@
 <div id="main-content">
     <h1>Die Seiten zur Auswahl</h1>
     @for (key of seitenn.keys(); track key) {
-        <div class = "roflkopter" (click) = "raflkapter(key)"><img [src]="'https://' + seitenn.get(key).icon" alt="SVG Image">{{key}}</div>
+        <div class = "roflkopter" (click) = "auswahl(seitenn.get(key).link)"><img [src]="'https://' + seitenn.get(key).icon" alt="SVG Image">{{key}}</div>
     }
 </div>

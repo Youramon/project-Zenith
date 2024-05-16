@@ -1,6 +1,6 @@
 <div class = "fighter">
   <div class ="Suche" [autofocus]="false">
-     <sub>{{this.objekt.name}} ({{a[this.objekt.faction]}})</sub>
+     <sub>{{this.objekt.name}} ({{a[this.objekt.faction] || 'keine Faction'}})</sub>
      <form [autofocus]="false">  
      <input [placeholder]="this.objekt.name + '...'" class = "input" type="text" [formControl]="control" [matAutocomplete]="automatic" (focus)="grrr()" autofocus = "false" [autofocus]="false">
      <mat-autocomplete #automatic="matAutocomplete" (optionSelected)="roflkopter($event)" [panelWidth]="'140px'" [autofocus]="false">

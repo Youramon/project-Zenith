@@ -33,7 +33,7 @@ export interface Member {
     ["Boxing", {link: "boxing", icon: "www.svgrepo.com/show/345522/boxing.svg"}],
   ]);
   
-  export let tabs: totally[] = [
+  export let tabs: any[] = [
    {name: "Clubber", image: "static.wikia.nocookie.net/vsbattles/images/5/50/Red_Clubber.png", cost: 70, faction: faction.tribal, eloRating: 1000, record: [0,0,0]},
    {name: "Protector", image: "static.wikia.nocookie.net/vsbattles/images/1/1c/ProtectorRed.png", cost: 80, faction: faction.tribal, eloRating: 1000, record: [0,0,0]},
    {name: "Spear Thrower", image: "static.wikia.nocookie.net/vsbattles/images/9/93/1637610530660.png", cost: 120, faction: faction.tribal, eloRating: 1000, record: [0,0,0]},
@@ -78,7 +78,7 @@ export interface Member {
   {name: "Monkey King", image: "static.wikia.nocookie.net/totally-accurate-battle-simulator/images/5/5e/Red_Monkey_King.png", cost: 2000, faction: faction.Dynasty, eloRating: 1000, record: [0,0,0]},  
   ]
 
-  export function setTabs(value: totally[]): void{
+  export function setTabs(value: any[]): void{
     tabs = value;
   }
   export let names: string[];
