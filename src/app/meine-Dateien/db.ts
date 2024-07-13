@@ -24,7 +24,8 @@ export interface Member {
     FantasyGood,
     FantasyEvil,
     Secret,
-    Matchroom
+    Matchroom,
+    feather
   }
   export const seiten = new Map([
     ["TABS", {link: "tabs", icon: "www.svgrepo.com/show/513724/axe-tool-construction.svg"}],

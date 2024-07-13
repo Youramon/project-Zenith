@@ -7,6 +7,8 @@ import {startWith, map} from 'rxjs/operators';
 import {AsyncPipe} from '@angular/common';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { FaunadbService } from '../../services/faunadb.service';
+import { currentPage } from '../../meine-Dateien/constants';
 
 
 @Component({
@@ -17,6 +19,7 @@ import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
   styleUrl: './fighter.component.less'
 })
 export class FighterComponent {
+[x: string]: any;
   @Output() raflkapter = new EventEmitter();
   control = new FormControl("");
   names: string[] = db.names;
@@ -24,7 +27,7 @@ export class FighterComponent {
   @Input() objekt!: any;
   a = db.faction;
 
-
+constructor(private faunadb: FaunadbService) { }
 
 ngOnInit() {
   this.gefilterteKaempfer = this.control.valueChanges.pipe(
@@ -47,5 +50,13 @@ ngOnInit() {
   }
   public grrr(): void{
     console.log("grrr");
+  }
+get currentPage() { return currentPage; }
+  async knopfGedrueckt(knopf: KeyboardEvent, رُفلّكوبطر: string){
+    if(knopf.key === "Enter" && currentPage === "boxing"){
+        let antwort = await this.faunadb.find(رُفلّكوبطر);
+        this.raflkapter.emit(antwort);
+        this.objekt = antwort.data.data[0];
+    }
   }
 }

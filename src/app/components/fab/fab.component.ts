@@ -6,6 +6,7 @@ import {
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import *as db from "../../meine-Dateien/db"
 import { FaunadbService } from '../../services/faunadb.service';
+import { currentPage } from '../../meine-Dateien/constants';
 @Component({
   selector: 'app-fab',
   standalone: true,
@@ -20,8 +21,11 @@ constructor(private bottomSheet: MatBottomSheet, private faunadb: FaunadbService
  openDialogue(){
     this.dialogue.emit();
   }
-  elementDelete(){
-db.tabs.pop();
+  async elementDelete(){
+    let a = db.tabs.pop();
+    if(currentPage === "boxing"){
+      await this.faunadb.remove(a.name);
+    }
   }
   async makeItHappen(){
     db.setTabs(await this.faunadb.listSync("boxing"));

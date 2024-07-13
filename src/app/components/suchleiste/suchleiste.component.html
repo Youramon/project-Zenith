@@ -1,0 +1,18 @@
+<form (submit)="searchFunction()">
+  <div class="search-container">
+    <input [(ngModel)]="searchText" #searchInput class="search-input" type="text" placeholder="Suche einen Kämpfer..." [ngModelOptions]="{standalone: true}">
+    <button type="submit" class="search-button">
+      <mat-icon>search</mat-icon> </button>
+  </div>
+</form>
+<div id= "rofltainer">
+@if(this.showDings){
+  @if(this.existiert){
+    <app-fighter [objekt]="this.response.data.data[0]"></app-fighter>
+  }
+  @else {
+    <p>Dieser Kämpfer existiert nicht!</p>
+  }
+}
+<h2>{{fights()}}</h2>
+</div>

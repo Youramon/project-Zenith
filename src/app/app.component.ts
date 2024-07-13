@@ -7,12 +7,13 @@ import { FabComponent } from './components/fab/fab.component';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogueComponent } from './components/dialogue/dialogue.component';
 import { SidemenuVertrauComponent } from './components/sidemenu-vertrau/sidemenu-vertrau.component';
+import { SuchleisteComponent } from './components/suchleiste/suchleiste.component';
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.less'],
-    imports: [CommonModule, RouterOutlet, EinItemComponent, FabComponent, DialogueComponent, SidemenuVertrauComponent]
+    imports: [CommonModule, RouterOutlet, EinItemComponent, FabComponent, DialogueComponent, SidemenuVertrauComponent, SuchleisteComponent]
 })
 export class AppComponent {
   title = 'project-zenith';
@@ -20,7 +21,8 @@ ngOnInit() {
 db.setTabs(JSON.parse(localStorage.getItem("tabs") || "[]"));
 db.setNames();
 }
-constructor(private dialog: MatDialog) {
+constructor(private dialog: MatDialog){
+  
 }
 
 showDialogue() {

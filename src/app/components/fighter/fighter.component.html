@@ -2,12 +2,17 @@
   <div class ="Suche" [autofocus]="false">
      <sub>{{this.objekt.name}} ({{a[this.objekt.faction] || 'keine Faction'}})</sub>
      <form [autofocus]="false">  
-     <input [placeholder]="this.objekt.name + '...'" class = "input" type="text" [formControl]="control" [matAutocomplete]="automatic" (focus)="grrr()" autofocus = "false" [autofocus]="false">
+      @if(currentPage != "boxing"){
+      <input #inputField [placeholder]="this.objekt.name + '...'" class = "input" type="text" [formControl]="control" [matAutocomplete]="automatic" (focus)="grrr()" autofocus = "false" [autofocus]="false" (keypress)="knopfGedrueckt($event, inputField.value)">
      <mat-autocomplete #automatic="matAutocomplete" (optionSelected)="roflkopter($event)" [panelWidth]="'140px'" [autofocus]="false">
         @for (name of gefilterteKaempfer | async; track name) {
           <mat-option  [value]="name">{{name}}</mat-option>
         }
     </mat-autocomplete>
+  }
+  @else {
+    <input #inputField [placeholder]="this.objekt.name + '...'" class = "input" type="text" [formControl]="control" (focus)="grrr()" autofocus = "false" [autofocus]="false" (keypress)="knopfGedrueckt($event, inputField.value.trim())">
+  }
     </form> 
   </div>
     
