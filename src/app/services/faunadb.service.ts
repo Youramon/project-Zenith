@@ -65,7 +65,8 @@ async updateElo(name1: string, name2: string, newElo1:number, newElo2:number, ne
 async remove(name: string) {
   try {
     const response = await this.client.query(
-      fql`Boxing!.byName(${name}).delete()`
+      fql`let guy = Boxing!.byName(${name}).first();
+      guy!.delete()`
     );
     return response;
   } catch (error) {

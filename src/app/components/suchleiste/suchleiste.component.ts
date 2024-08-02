@@ -3,16 +3,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { FaunadbService } from '../../services/faunadb.service';
 import { FormsModule } from '@angular/forms';
 import { FighterComponent } from '../fighter/fighter.component';
-import {counter} from '../../meine-Dateien/constants';
+import {counter, currentPage} from '../../meine-Dateien/constants';
+import { TabstisticsComponent } from '../tabstistics/tabstistics.component';
 
 @Component({
   selector: 'app-suchleiste',
   standalone: true,
-  imports: [MatIconModule, FormsModule, FighterComponent],
+  imports: [MatIconModule, FormsModule, FighterComponent, TabstisticsComponent],
   templateUrl: './suchleiste.component.html',
   styleUrl: './suchleiste.component.less'
 })
 export class SuchleisteComponent {
+  curentPage = currentPage;
   searchText: string = "";
   showDings: boolean = false;
   existiert: boolean = false;

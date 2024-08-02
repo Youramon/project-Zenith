@@ -1,6 +1,6 @@
 import { signal } from "@angular/core";
 
-export const apiKey = "AAAAAAAAAAAAAAAAAAAA";
+export const apiKey = "";
 export let currentPage: string = "tabs";
 export let dowload = true;
 export function setCurrentPage(value: string): void{
