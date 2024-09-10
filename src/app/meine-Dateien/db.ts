@@ -87,6 +87,7 @@ export interface Member {
     names = tabs.map(member => member.name);
   }
   export function calculateAllAverage() {
+    
     let eloLection: number[][] = Array.from({ length: 14 }, () => Array(14).fill(0));
     for (let member of tabs) {
     eloLection[member.faction][0] += member.eloRating;
