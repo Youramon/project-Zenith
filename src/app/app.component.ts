@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogueComponent } from './components/dialogue/dialogue.component';
 import { SidemenuVertrauComponent } from './components/sidemenu-vertrau/sidemenu-vertrau.component';
 import { SuchleisteComponent } from './components/suchleiste/suchleiste.component';
+
 @Component({
     selector: 'app-root',
     standalone: true,
